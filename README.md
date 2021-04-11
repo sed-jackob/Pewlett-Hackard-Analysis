@@ -15,7 +15,7 @@ Below are four major points resulted from the two analyses conducted:
 
 3. Based on the ***retiring_titles*** table, we can see that most titles are Senior Engineers and least are managers
 
-![Retiring % by title](./Resources/retiring _percentages_by_title.png)
+![Retiring percentages by title](./Resources/retiring _percentages_by_title.png)
 
 4. Analyzing the ***mentorship_eligibilty*** table and using today’s date, April 10th, 2021, we can conclude that the average (mean) years of service for mentors is: ***28*** years
 
@@ -34,31 +34,53 @@ Based on ***query 1*** below, which gets the total number of employees eligible 
 #### **Query 1**
 
 -- Total eligible for retirement employees per department
-SELECT 
+SELECT
+
 	dp.dept_name AS "Department",
+
 	COUNT(emp.emp_no) AS "Total Employees"
+
 FROM Employees AS emp
+
 INNER JOIN dept_emp AS de
+
 ON emp.emp_no = de.emp_no
+
 INNER JOIN Departments AS dp
+
 ON de.dept_no = dp.dept_no
+
 WHERE (emp.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+
 GROUP BY dp.dept_name
+
 ORDER BY "Total Employees" DESC;
+
 
 #### **Query 2**
 
 -- Total mentors per department
+
 SELECT 
+
 	dt.dept_name AS "Department",
+
 	COUNT(me.emp_no) AS "Total Mentors"
+
 FROM mentorship_eligibilty AS me
+
 INNER JOIN dept_emp AS de
+
 ON me.emp_no = de.emp_no
+
 INNER JOIN Departments AS dt
+
 ON de.dept_no = dt.dept_no
+
 GROUP BY dt.dept_name
+
 ORDER BY "Total Mentors" DESC;
+
 
 ---
 
