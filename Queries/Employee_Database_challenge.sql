@@ -55,7 +55,7 @@ ON em.emp_no = de.emp_no
 INNER JOIN Titles AS ti
 ON em.emp_no = ti.emp_no
 WHERE EXTRACT (YEAR FROM em.birth_date) = 1965 AND de.to_date = '9999-01-01'
-ORDER BY em.emp_no
+ORDER BY em.emp_no, ti.to_date DESC
 
 -- Deliverable 3: Report
 --------------------------------------------------------------------------------

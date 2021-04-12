@@ -17,7 +17,7 @@ Below are four major points resulted from the two analyses conducted:
 
 ![Retiring percentages per Title](./Resources/ret_per_title.png)
 
-4. Analyzing the ***mentorship_eligibilty*** table and using today’s date, April 10th, 2021, we can conclude that the average (mean) years of service for mentors is: ***28*** years
+4. First we made sure the *mentorship query* sorts the ***to_date*** from the ***titles*** table descending order so we get the latest title for each employee. Then after analyzing the ***mentorship_eligibilty*** table and using today’s date, April 10th, 2021, we can conclude that the average (mean) years of service for mentors is: ***28*** years
 
 ## Summary
 
